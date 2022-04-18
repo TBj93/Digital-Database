@@ -16,3 +16,15 @@ let pokemonList = [
   },
 ];
 
+for (let i = 0; i <= pokemonList.length; i++)
+    // writes every pokemon in the list + height    
+    {
+        if(pokemonList[i].height > 4 ){
+            document.write(pokemonList[i].name+'__height:'+pokemonList[i].height+'--> Huge!'+'<br>  </br>');
+        }
+        
+        else{
+        document.write(pokemonList[i].name+'__height:'+pokemonList[i].height+'<br>  </br>');
+    }
+    
+    }
