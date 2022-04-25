@@ -1,3 +1,5 @@
+let pokemonRepository = (function () { 
+
 let pokemonList = [
   {
     name: "Mewtwo",
@@ -17,7 +19,27 @@ let pokemonList = [
 ];
 
 
-pokemonList.forEach(function(pokemon){
+
+ function getAll() {
+    return pokemonList;
+}
+// return all items
+ function add(pokemon)  {
+    PokemonList.push(pokemon);
+}
+//add a single item to the pokemonLst
+return {
+    add: add,
+    getAll: getAll
+};    
+    
+})();
+
+//  document.write(pokemonRepository.getAll());
+
+
+
+pokemonRepository.getAll().forEach(function(pokemon){
  // writes every pokemon in the list + height 
 
          if(pokemon.height > 4 ){
@@ -29,19 +51,3 @@ pokemonList.forEach(function(pokemon){
     }           
 
                     });
-/*
-
-
-for (let i = 0; i <= pokemonList.length; i++)
-    // writes every pokemon in the list + height    
-    {
-        if(pokemonList[i].height > 4 ){
-            document.write(pokemonList[i].name+'__height:'+pokemonList[i].height+'--> Huge!'+'<br>  </br>');
-        }
-        
-        else{
-        document.write(pokemonList[i].name+'__height:'+pokemonList[i].height+'<br>  </br>');
-    }
-    
-    }
-*/
