@@ -1,7 +1,4 @@
 let pokemonRepository = (function () {
-
-
-
   let pokemonList = [
     {
       name: "Mewtwo",
@@ -29,33 +26,37 @@ let pokemonRepository = (function () {
     pokemonList.push(pokemon);
   }
   //add a single item to the pokemonLst
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+  // shows details about the object
+
   function addListItem(pokemon) {
-    let pokelist = document.querySelector('.pokelist');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');  
-    
-     button.innerText = pokemon.name;
-    
-     button.classList.add('button');
+    let pokelist = document.querySelector(".pokelist");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button");
     listItem.appendChild(button);
     pokelist.appendChild(listItem);
-
+    //button list
+    button.addEventListener("click", function () {
+      showDetails(pokemon);
+    });
+    // event listener and handler
   }
-  
+  //add button to each item in list
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
+    showDetails: showDetails,
   };
 })();
 
-//  document.write(pokemonRepository.getAll());
-
 pokemonRepository.getAll().forEach(function (pokemon) {
-  // writes every pokemon in the list 
- pokemonRepository.addListItem(pokemon);
+  // writes every pokemon in the list
+  pokemonRepository.addListItem(pokemon);
+  // adds button
 });
-
-
-
-  
