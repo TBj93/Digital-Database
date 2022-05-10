@@ -1,25 +1,42 @@
+body {
+  background-color: #cccccc;
+}
+
 .button {
   padding: 15px 25px;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #fff;
-  background-color: #04AA6D;
+  color: black;
+  background-color: darkred;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+  width: 30%;
+  margin-left: 25%;
+  margin-bottom: 2%;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+  background-color: red;
+}
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: orange;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-body {
-  background-color: blue;
+.pokelist {
+  list-style: none;
 }
 
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  margin-left: 25%;
+}
