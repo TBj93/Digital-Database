@@ -2,10 +2,21 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
+  var x = document.getElementById("myDIV");
+
+  function hideLoadingMessage() {
+    x.style.display = "none";
+  }
+  function showLoadingMessage() {
+    x.style.display = "block";
+  }
+
   function LoadList() {
+    showLoadingMessage();
     {
       return fetch(apiUrl)
         .then(function (response) {
+          hideLoadingMessage();
           return response.json();
         })
         .then(function (json) {
@@ -14,26 +25,32 @@ let pokemonRepository = (function () {
               name: item.name,
               detailsUrl: item.url,
             };
+            hideLoadingMessage();
             add(pokemon);
           });
         })
         .catch(function (e) {
+          hideLoadingMessage();
           console.error(e);
         });
     }
   }
   function loadDetails(pokemon) {
+    showLoadingMessage();
     let url = pokemon.detailsUrl;
     return fetch(url)
       .then(function (response) {
+        hideLoadingMessage();
         return response.json();
       })
       .then(function (details) {
+        hideLoadingMessage();
         pokemon.imageUrl = details.sprites.front_default;
         pokemon.height = details.height;
         pokemon.types = details.types;
       })
       .catch(function (e) {
+        hideLoadingMessage();
         console.error(e);
       });
   }
@@ -69,6 +86,7 @@ let pokemonRepository = (function () {
     // event listener and handler
   }
   //add button to each item in list
+
   return {
     add: add,
     getAll: getAll,
@@ -76,6 +94,8 @@ let pokemonRepository = (function () {
     loadDetails: loadDetails,
     addListItem: addListItem,
     showDetails: showDetails,
+    showLoadingMessage: showLoadingMessage,
+    hideLoadingMessage: hideLoadingMessage,
   };
 })();
 
