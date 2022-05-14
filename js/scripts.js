@@ -1,9 +1,9 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   var x = document.getElementById("myDIV");
-
+   // create  loading screen
   function hideLoadingMessage() {
     x.style.display = "none";
   }
@@ -106,23 +106,4 @@ pokemonRepository.LoadList().then(function () {
   });
 });
 
-/*
 
-    {
-      name: "Mewtwo",
-      height: 2,
-      types: ["Psychic"],
-    },
-    {
-      name: "Aerodactyl",
-      height: 1.8,
-      types: ["Rock", "Flying"],
-    },
-
-    {
-      name: "Gyarados",
-      height: 6.1,
-      types: ["Water", "Flying"],
-    },
-  
-    */
