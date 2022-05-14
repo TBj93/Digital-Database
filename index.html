@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Digital Database</title>
-       <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <header> <img src="img/title.png">  </header> 
+    <header class="title-logo">
+      <img src="img/title.png"  /></header>
 
-    <div id="myDIV" >
-      Loading...
-      </div>
- 
-   
-    <ul class="pokelist"></ul>  <!--list for pokemon buttons-->
+    <div id="myDIV">Loading...</div>
+
+    <ul class="pokelist grid"></ul>
+    <!--list for pokemon buttons-->
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
-      <script src="js/scripts.js"></script>
-      
-
+    <script src="js/scripts.js"></script>
   </body>
 </html>
