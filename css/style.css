@@ -1,3 +1,5 @@
+html,
+
 body {
   background-color: #cccccc;
 }
@@ -27,6 +29,44 @@ margin-bottom: 5%;
   background-color: red;
 }
 
+.button:hover {
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 700ms;
+  -webkit-animation-duration: 700ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(10deg);}
+  25% {-webkit-transform: rotate(-15deg);}
+  50% {-webkit-transform: rotate(25deg);}
+  75% {-webkit-transform: rotate(-15deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
+
+
+@-ms-keyframes wiggle {
+  0% {-ms-transform: rotate(1deg);}
+  25% {-ms-transform: rotate(-1deg);}
+  50% {-ms-transform: rotate(1.5deg);}
+  75% {-ms-transform: rotate(-5deg);}
+  100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+
 .button:active {
   background-color: orange;
   box-shadow: 0 5px #666;
@@ -45,6 +85,8 @@ margin-bottom: 5%;
   margin-top: 20px;
   margin-left: 10%;
 }
+
+
 
 .grid {
   display: grid;
@@ -71,3 +113,69 @@ margin-bottom: 5%;
     grid-gap: 10px;
   }
 }
+
+.modal {
+  text-align: center;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 36px;
+  font-weight: bold;
+}
+#modal-container {
+  display: block;
+
+    
+  }
+
+
+
+  #modal-container.is-visible {
+    display: none;
+  
+      text-align: center;
+      position: fixed;
+      padding: 20px;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      
+      /* to show it above other content */
+      z-index: 999; 
+      
+      /* to allow scrolling if the screen is not high enough*/
+      overflow: auto; 
+      
+      /* this is used to center the modal */
+      display: grid;
+      text-align: center;
+    }
+   
+    
+    
+   
+  
