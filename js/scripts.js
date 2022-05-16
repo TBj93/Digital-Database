@@ -1,7 +1,8 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  
   var x = document.getElementById("myDIV");
    // create  loading screen
   function hideLoadingMessage() {
@@ -11,6 +12,48 @@ let pokemonRepository = (function () {
     x.style.display = "block";
   }
 
+ //create modal for pokemon on screen
+ function showModal(pokemon) {
+
+  //create basic modal container
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.add('is-visible');
+
+//create close button
+ let closebtn = document.createElement('button');
+ closebtn.classList.add('modal-close');
+ closebtn.innerText = 'close';
+ closebtn.addEventListener('click', hideModal);
+
+ modalContainer.appendChild(closebtn);
+
+let container = document.querySelector('#image-container');
+let pokeImg = document.createElement('img');
+ 
+
+pokeImg.src =pokemon.imageUrl;
+container.appendChild(pokeImg);
+
+  }
+
+  /* document.querySelector('#showModal').addEventListener('click', () => {
+    showModal();
+  });
+
+  */
+  function hideModal() {
+   
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.remove('is-visible');
+   
+
+  }
+  
+
+
+
+
+  // load pokelist from external url
   function LoadList() {
     showLoadingMessage();
     {
@@ -67,6 +110,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
+      showModal(pokemon);
     });
   }
   // shows details about the object
