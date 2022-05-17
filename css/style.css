@@ -1,12 +1,11 @@
 html,
-
 body {
   background-color: #cccccc;
 }
 
 .title-logo {
   text-align: center;
-margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 .button {
@@ -40,32 +39,59 @@ margin-bottom: 5%;
   -ms-animation-timing-function: ease-in-out;
 }
 
-
 @-webkit-keyframes wiggle {
-  0% {-webkit-transform: rotate(10deg);}
-  25% {-webkit-transform: rotate(-15deg);}
-  50% {-webkit-transform: rotate(25deg);}
-  75% {-webkit-transform: rotate(-15deg);}
-  100% {-webkit-transform: rotate(0deg);}
+  0% {
+    -webkit-transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(25deg);
+  }
+  75% {
+    -webkit-transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
 }
 
-
 @-ms-keyframes wiggle {
-  0% {-ms-transform: rotate(1deg);}
-  25% {-ms-transform: rotate(-1deg);}
-  50% {-ms-transform: rotate(1.5deg);}
-  75% {-ms-transform: rotate(-5deg);}
-  100% {-ms-transform: rotate(0deg);}
+  0% {
+    -ms-transform: rotate(1deg);
+  }
+  25% {
+    -ms-transform: rotate(-1deg);
+  }
+  50% {
+    -ms-transform: rotate(1.5deg);
+  }
+  75% {
+    -ms-transform: rotate(-5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
 }
 
 @keyframes wiggle {
-  0% {transform: rotate(10deg);}
-  25% {transform: rotate(-10deg);}
-  50% {transform: rotate(20deg);}
-  75% {transform: rotate(-5deg);}
-  100% {transform: rotate(0deg);}
+  0% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
-
 
 .button:active {
   background-color: orange;
@@ -86,16 +112,14 @@ margin-bottom: 5%;
   margin-left: 10%;
 }
 
-
-
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
 }
 
 .grid__item {
-  background-color: #cfcfc4
+  background-color: #cfcfc4;
 }
 
 @media all and (max-width: 500px) {
@@ -103,7 +127,7 @@ margin-bottom: 5%;
     grid-template-columns: 1fr;
   }
 }
-@media all and (min-width: 501px) and (max-width: 750px){
+@media all and (min-width: 501px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -124,10 +148,9 @@ margin-bottom: 5%;
   width: 50%; /* Full width */
   height: 50%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-
 
 .modal-content {
   background-color: #fefefe;
@@ -135,6 +158,7 @@ margin-bottom: 5%;
   padding: 20px;
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
+  text-align: center;
 }
 
 .modal-close {
@@ -143,39 +167,52 @@ margin-bottom: 5%;
   font-size: 36px;
   font-weight: bold;
 }
+.poke-name {
+  color: #aaa;
+  float: inline-start;
+  font-size: 48px;
+  font-weight: bold;
+}
+.poke-height {
+  color: #aaa;
+  float: inline-end;
+  font-size: 48px;
+  font-weight: bold;
+}
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #modal-container {
   display: block;
+}
 
-    
-  }
+#modal-container.is-visible {
+  margin-left: 30%;
 
+  margin-bottom: 30%;
+  display: none;
 
+  text-align: center;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
 
-  #modal-container.is-visible {
-    display: none;
-  
-      text-align: center;
-      position: fixed;
-      padding: 20px;
-      box-sizing: border-box;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 50%;
-      background: rgba(0, 0, 0, 0.5);
-      
-      /* to show it above other content */
-      z-index: 999; 
-      
-      /* to allow scrolling if the screen is not high enough*/
-      overflow: auto; 
-      
-      /* this is used to center the modal */
-      display: grid;
-      text-align: center;
-    }
-   
-    
-    
-   
-  
+  /* to show it above other content */
+  z-index: 999;
+
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto;
+
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+}
