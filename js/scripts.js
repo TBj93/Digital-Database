@@ -135,6 +135,11 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("button");
+    button.classList.add("btn");
+    button.classList.add("btn-dark");
+    button.classList.add("btn-block");
+    button.classList.add("btn-outline-primary");
+    listItem.classList.add("group-list-item");
     listItem.appendChild(button);
     pokelist.appendChild(listItem);
     //button list
