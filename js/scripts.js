@@ -12,58 +12,13 @@ let pokemonRepository = (function () {
     x.style.display = "block";
   }
 
-  //create modal for pokemon on screen
-  function showModal(pokemon) {
-    //create basic modal container
-    let modalContainer = document.querySelector("#modal-container");
-    modalContainer.classList.add("is-visible");
 
-    //create close button
-    let closebtn = document.createElement("button");
-    closebtn.classList.add("modal-close");
-    closebtn.innerText = "close";
-    closebtn.addEventListener("click", hideModal);
+  function showModal() {
+ let mbutton = document.createElement('button');
+ mbutton.classList.add('btn');
+ mbutton.classList.add('btn-primary');
 
-    modalContainer.appendChild(closebtn);
 
-    //add poke Img to modal
-    let container = document.querySelector("#image-container");
-    let pokeImg = document.createElement("img");
-    pokeImg.src = pokemon.imageUrl;
-    container.appendChild(pokeImg);
-    //add poke name to modal
-    let nameContainer = document.createElement("header");
-    nameContainer.classList.add("poke-name");
-    nameContainer.innerText = pokemon.name;
-    container.appendChild(nameContainer);
-
-    //add poke height to modal
-    let heightContainer = document.createElement("header");
-    heightContainer.classList.add("poke-height");
-    heightContainer.innerText = "Height:" + pokemon.height;
-    container.appendChild(heightContainer);
-
-    // add escape key and outside click as alts for closing modal
-
-    window.addEventListener("keydown", (e) => {
-      if (
-        e.key === "Escape" &&
-        modalContainer.classList.contains("is-visible")
-      ) {
-        hideModal();
-      }
-    });
-    modalContainer.addEventListener("click", (e) => {
-      let target = e.target;
-      if (target === modalContainer) {
-        hideModal();
-      }
-    });
-  }
-
-  function hideModal() {
-    let modalContainer = document.querySelector("#modal-container");
-    modalContainer.classList.remove("is-visible");
   }
 
   // load pokelist from external url
