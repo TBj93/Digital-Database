@@ -11,16 +11,34 @@ let pokemonRepository = (function () {
   function showLoadingMessage() {
     x.style.display = "block";
   }
+  
 
+  function showModal(pokemon) {
+ let modalBody =$(".modal-body");
+ let modalTitle = $('.modal-title');
 
-  function showModal() {
- let mbutton = document.createElement('button');
- mbutton.classList.add('btn');
- mbutton.classList.add('btn-primary');
+ modalTitle.empty();
+
+ // title und  header name height type  und img rein
+ // title body . empty machen damit modal sich leert
+ //  screen  reader
+ // modal für loading message
+ let pName = $("<h1>" + pokemon.name + "</h1>");
+ modalTitle.append(pName);
+
+ let pImage = $("img").attr({src:pokemon.imageUrl});
+ modalBody.empty();
+ modalBody.append(pImage);
+
+let pHeight = $('<p>'+"Height:     "+pokemon.height + '</p>');
+
+modalBody.append(pHeight);
+
+$('#exampleModal').modal('show');
 
 
   }
-
+  
   // load pokelist from external url
   function LoadList() {
     showLoadingMessage();
