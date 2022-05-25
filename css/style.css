@@ -13,12 +13,10 @@ body {
 }
 
 #myDIV {
-  width: 100%;
-  padding: 50px 0;
+  width: 10%;
   text-align: center;
-  background-color: lightblue;
-  margin-top: 20px;
-  margin-left: 10%;
+  background-color: lightgrey;
+  margin-left: 40%;
 }
 
 .grid {
