@@ -112,6 +112,7 @@ $('#exampleModal').modal('show');
     button.classList.add("btn-dark");
     button.classList.add("btn-block");
     button.classList.add("btn-outline-primary");
+    button.setAttribute('data-toggle', 'modal');
     listItem.classList.add("group-list-item");
     listItem.appendChild(button);
     pokelist.appendChild(listItem);
