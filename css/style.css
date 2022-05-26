@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: #cccccc;
+  background-color: #bcc631;
 }
 
 .title-logo {
@@ -11,6 +11,13 @@ body {
 .pokelist {
   list-style: none;
 }
+
+.navbar-collapse {
+  background-color: red;
+  flex: auto;
+}
+
+
 .modal-body {
   background-color: yellow;
 }
@@ -22,13 +29,14 @@ body {
 }
 
 #myDIV {
-  width: 10%;
-  text-align: center;
-  background-color: lightgrey;
-  margin-left: 40%;
+  width: 7rem; 
+  height: 7rem;
+  margin-left: 50%;
+ 
 }
 
 .grid {
+  margin-top: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;

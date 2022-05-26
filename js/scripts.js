@@ -13,6 +13,10 @@ let pokemonRepository = (function () {
   }
   
 
+ 
+
+
+
   function showModal(pkm) {
  let modalBody =$(".modal-body");
  let modalTitle = $('.modal-title');
@@ -115,6 +119,7 @@ $('#exampleModal').modal('show');
     button.classList.add("btn-block");
     button.classList.add("btn-outline-primary");
     button.setAttribute('data-toggle', 'modal');
+    //add bootstrap buttons and toggle modal
     //button.setAttribute('data-target', '#exampleModal');
     listItem.classList.add("group-list-item");
     listItem.appendChild(button);
