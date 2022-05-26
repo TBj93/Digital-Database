@@ -11,6 +11,15 @@ body {
 .pokelist {
   list-style: none;
 }
+.modal-body {
+  background-color: yellow;
+}
+.modal-footer {
+  background-color: lightgray;
+}
+.modal-header {
+  background-color: lightgray;
+}
 
 #myDIV {
   width: 10%;

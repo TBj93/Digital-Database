@@ -13,30 +13,29 @@ let pokemonRepository = (function () {
   }
   
 
-  function showModal(pokemon) {
+  function showModal(pkm) {
  let modalBody =$(".modal-body");
  let modalTitle = $('.modal-title');
 
  modalTitle.empty();
-
- // title und  header name height type  und img rein
- // title body . empty machen damit modal sich leert
- //  screen  reader
- // modal für loading message
- let pName = $("<h1>" + pokemon.name + "</h1>");
+ let pName = $("<h1>" + pkm.name + "</h1>");
  modalTitle.append(pName);
+ 
+ let pImage = $('<img class="modal-img" style=width:50%">');
+ pImage.attr("src", pkm.imageUrlFront);
+ let pBimage =$('<img class="modal-img" style=width:50%">');
+ pBimage.attr("src", pkm.imageUrlBack);
+modalBody.empty();
+ 
 
- let pImage = $("img").attr({src:pokemon.imageUrl});
- modalBody.empty();
- modalBody.append(pImage);
+let pHeight = $('<p>'+"Height:     "+pkm.height + '</p>');
+let pWeight = $('<p>'+"Weight:     "+pkm.weight + '</p>');
 
-let pHeight = $('<p>'+"Height:     "+pokemon.height + '</p>');
-
+modalBody.append(pImage);
+modalBody.append(pBimage);
 modalBody.append(pHeight);
-
+modalBody.append(pWeight);
 $('#exampleModal').modal('show');
-
-
   }
   
   // load pokelist from external url
@@ -75,9 +74,12 @@ $('#exampleModal').modal('show');
       })
       .then(function (details) {
         hideLoadingMessage();
-        pokemon.imageUrl = details.sprites.front_default;
+        pokemon.imageUrlFront = details.sprites.front_default;
+        pokemon.imageUrlBack = details.sprites.back_default;
         pokemon.height = details.height;
         pokemon.types = details.types;
+        pokemon.weight= details.weight;
+      
       })
       .catch(function (e) {
         hideLoadingMessage();
@@ -113,6 +115,7 @@ $('#exampleModal').modal('show');
     button.classList.add("btn-block");
     button.classList.add("btn-outline-primary");
     button.setAttribute('data-toggle', 'modal');
+    //button.setAttribute('data-target', '#exampleModal');
     listItem.classList.add("group-list-item");
     listItem.appendChild(button);
     pokelist.appendChild(listItem);
