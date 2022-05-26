@@ -16,25 +16,27 @@ let pokemonRepository = (function () {
  
 
 
-
+// show modal function
   function showModal(pkm) {
+  
  let modalBody =$(".modal-body");
  let modalTitle = $('.modal-title');
-
+// add pkmn name as modal title
  modalTitle.empty();
- let pName = $("<h1>" + pkm.name + "</h1>");
+ let pName = $("<h2>" + pkm.name + "</h2>");
  modalTitle.append(pName);
- 
+ //add pkmn front an back images to modal
  let pImage = $('<img class="modal-img" style=width:50%">');
  pImage.attr("src", pkm.imageUrlFront);
  let pBimage =$('<img class="modal-img" style=width:50%">');
  pBimage.attr("src", pkm.imageUrlBack);
 modalBody.empty();
  
-
+// add pkmn hieght and weight to modal
 let pHeight = $('<p>'+"Height:     "+pkm.height + '</p>');
 let pWeight = $('<p>'+"Weight:     "+pkm.weight + '</p>');
 
+// appending
 modalBody.append(pImage);
 modalBody.append(pBimage);
 modalBody.append(pHeight);
@@ -70,7 +72,8 @@ $('#exampleModal').modal('show');
   }
   function loadDetails(pokemon) {
     showLoadingMessage();
-    let url = pokemon.detailsUrl;
+    // get url detils from page
+    let url = pokemon.detailsUrl; 
     return fetch(url)
       .then(function (response) {
         hideLoadingMessage();
@@ -78,10 +81,11 @@ $('#exampleModal').modal('show');
       })
       .then(function (details) {
         hideLoadingMessage();
+           // define url parts
         pokemon.imageUrlFront = details.sprites.front_default;
         pokemon.imageUrlBack = details.sprites.back_default;
         pokemon.height = details.height;
-        pokemon.types = details.types;
+        pokemon.abilities = details.abilities;
         pokemon.weight= details.weight;
       
       })
@@ -102,7 +106,7 @@ $('#exampleModal').modal('show');
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+     // console.log(pokemon);
       showModal(pokemon);
     });
   }
@@ -120,7 +124,7 @@ $('#exampleModal').modal('show');
     button.classList.add("btn-outline-primary");
     button.setAttribute('data-toggle', 'modal');
     //add bootstrap buttons and toggle modal
-    //button.setAttribute('data-target', '#exampleModal');
+    //button.setAttribute('data-target', '#exampleModal');  -- alt to modal.show
     listItem.classList.add("group-list-item");
     listItem.appendChild(button);
     pokelist.appendChild(listItem);
@@ -144,9 +148,9 @@ $('#exampleModal').modal('show');
     showModal: showModal,
   };
 })();
-
+        // Load data
 pokemonRepository.LoadList().then(function () {
-  // Now the data is loaded!
+     // add each item in repo to the list
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });

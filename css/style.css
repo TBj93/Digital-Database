@@ -17,7 +17,9 @@ body {
   flex: auto;
 }
 
-
+.modal-title {
+  text-align: center;
+}
 .modal-body {
   background-color: yellow;
 }
@@ -27,7 +29,7 @@ body {
 .modal-header {
   background-color: lightgray;
 }
-
+/* loading animation style*/
 #myDIV {
   width: 7rem; 
   height: 7rem;
@@ -45,7 +47,7 @@ body {
 .grid__item {
   background-color: #cfcfc4;
 }
-
+/* Responsive Grid */
 @media all and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
