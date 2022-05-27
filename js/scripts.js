@@ -12,8 +12,6 @@ let pokemonRepository = (function () {
     x.style.display = "block";
   }
 
-
-
   // show modal function
   function showModal(pkm) {
     let modalBody = $(".modal-body");
