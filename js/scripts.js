@@ -12,6 +12,20 @@ let pokemonRepository = (function () {
     x.style.display = "block";
   }
 
+//Filter for pokemon
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $(".sbtn").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+
+
+
+
   // show modal function
   function showModal(pkm) {
     let modalBody = $(".modal-body");
@@ -114,6 +128,7 @@ let pokemonRepository = (function () {
     button.innerText = pokemon.name;
     button.classList.add("button");
     button.classList.add("btn");
+    button.classList.add("sbtn");
     button.classList.add("btn-dark");
     button.classList.add("btn-block");
     button.classList.add("btn-outline-primary");

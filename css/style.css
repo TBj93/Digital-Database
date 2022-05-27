@@ -12,7 +12,12 @@ body {
   list-style: none;
 }
 
+.navstyle {
+  flex-flow: row;
+}
+
 .navbar-collapse {
+ 
   background-color: red;
   flex: auto;
 }
