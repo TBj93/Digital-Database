@@ -26,4 +26,4 @@ A bare minimum of RAM and processing power should be available for good performa
 Screenshots
 
 ![This is an image](https://github.com/TBj93/Digital-Database/blob/main/img/pokedex1.JPG?raw=true)
-https://github.com/TBj93/Digital-Database/blob/main/img/pokedex%202.JPG?raw=true
+![This is an image](https://github.com/TBj93/Digital-Database/blob/main/img/pokedex%202.JPG?raw=true)
