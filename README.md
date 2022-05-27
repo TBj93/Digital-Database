@@ -2,12 +2,12 @@ INTRODUCTION
 
 This is a simple pokedex to demonstrate some javascript coding skills. 
 
+
 TABLE OF CONTENTS
 
 -Functionality
 -Usability
 -Technical Requirements
-
 
 
 Functionality
@@ -22,3 +22,7 @@ Technical Requirements
 
 The pokedex runs on most modern browsers with javascript.
 A bare minimum of RAM and processing power should be available for good performance.
+
+Screenshots
+
+![This is an image](Digital-Database\img\pokedex1.JPG)
