@@ -23,9 +23,6 @@ let pokemonRepository = (function () {
   });
 
 
-
-
-
   // show modal function
   function showModal(pkm) {
     let modalBody = $(".modal-body");
