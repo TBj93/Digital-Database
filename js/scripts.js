@@ -12,6 +12,8 @@ let pokemonRepository = (function () {
     x.style.display = "block";
   }
 
+
+
   // show modal function
   function showModal(pkm) {
     let modalBody = $(".modal-body");
@@ -100,10 +102,11 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-       console.log(pokemon);
+      console.log(pokemon);
       showModal(pokemon);
     });
   }
+
   // shows details about the object
 
   function addListItem(pokemon) {
