@@ -31,10 +31,9 @@ body {
 }
 /* loading animation style*/
 #myDIV {
-  width: 7rem; 
+  width: 7rem;
   height: 7rem;
   margin-left: 50%;
- 
 }
 
 .grid {
@@ -75,6 +74,3 @@ body {
   font-size: 48px;
   font-weight: bold;
 }
-
-
-

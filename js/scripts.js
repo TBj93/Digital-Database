@@ -11,39 +11,34 @@ let pokemonRepository = (function () {
   function showLoadingMessage() {
     x.style.display = "block";
   }
-  
 
- 
-
-
-// show modal function
+  // show modal function
   function showModal(pkm) {
-  
- let modalBody =$(".modal-body");
- let modalTitle = $('.modal-title');
-// add pkmn name as modal title
- modalTitle.empty();
- let pName = $("<h2>" + pkm.name + "</h2>");
- modalTitle.append(pName);
- //add pkmn front an back images to modal
- let pImage = $('<img class="modal-img" style=width:50%">');
- pImage.attr("src", pkm.imageUrlFront);
- let pBimage =$('<img class="modal-img" style=width:50%">');
- pBimage.attr("src", pkm.imageUrlBack);
-modalBody.empty();
- 
-// add pkmn hieght and weight to modal
-let pHeight = $('<p>'+"Height:     "+pkm.height + '</p>');
-let pWeight = $('<p>'+"Weight:     "+pkm.weight + '</p>');
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    // add pkmn name as modal title
+    modalTitle.empty();
+    let pName = $("<h2>" + pkm.name + "</h2>");
+    modalTitle.append(pName);
+    //add pkmn front an back images to modal
+    let pImage = $('<img class="modal-img" style=width:50%">');
+    pImage.attr("src", pkm.imageUrlFront);
+    let pBimage = $('<img class="modal-img" style=width:50%">');
+    pBimage.attr("src", pkm.imageUrlBack);
+    modalBody.empty();
 
-// appending
-modalBody.append(pImage);
-modalBody.append(pBimage);
-modalBody.append(pHeight);
-modalBody.append(pWeight);
-$('#exampleModal').modal('show');
+    // add pkmn hieght and weight to modal
+    let pHeight = $("<p>" + "Height:     " + pkm.height + "</p>");
+    let pWeight = $("<p>" + "Weight:     " + pkm.weight + "</p>");
+
+    // appending
+    modalBody.append(pImage);
+    modalBody.append(pBimage);
+    modalBody.append(pHeight);
+    modalBody.append(pWeight);
+    $("#exampleModal").modal("show");
   }
-  
+
   // load pokelist from external url
   function LoadList() {
     showLoadingMessage();
@@ -73,7 +68,7 @@ $('#exampleModal').modal('show');
   function loadDetails(pokemon) {
     showLoadingMessage();
     // get url detils from page
-    let url = pokemon.detailsUrl; 
+    let url = pokemon.detailsUrl;
     return fetch(url)
       .then(function (response) {
         hideLoadingMessage();
@@ -81,13 +76,12 @@ $('#exampleModal').modal('show');
       })
       .then(function (details) {
         hideLoadingMessage();
-           // define url parts
+        // define url parts
         pokemon.imageUrlFront = details.sprites.front_default;
         pokemon.imageUrlBack = details.sprites.back_default;
         pokemon.height = details.height;
         pokemon.abilities = details.abilities;
-        pokemon.weight= details.weight;
-      
+        pokemon.weight = details.weight;
       })
       .catch(function (e) {
         hideLoadingMessage();
@@ -106,7 +100,7 @@ $('#exampleModal').modal('show');
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-     // console.log(pokemon);
+       console.log(pokemon);
       showModal(pokemon);
     });
   }
@@ -122,7 +116,7 @@ $('#exampleModal').modal('show');
     button.classList.add("btn-dark");
     button.classList.add("btn-block");
     button.classList.add("btn-outline-primary");
-    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute("data-toggle", "modal");
     //add bootstrap buttons and toggle modal
     //button.setAttribute('data-target', '#exampleModal');  -- alt to modal.show
     listItem.classList.add("group-list-item");
@@ -148,9 +142,9 @@ $('#exampleModal').modal('show');
     showModal: showModal,
   };
 })();
-        // Load data
+// Load data
 pokemonRepository.LoadList().then(function () {
-     // add each item in repo to the list
+  // add each item in repo to the list
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
