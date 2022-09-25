@@ -5,14 +5,15 @@ This is a simple pokedex app to demonstrate some javascript coding skills.
 
 # TABLE OF CONTENTS
 
--Functionality
--Usability
--Technical Requirements
+- Functionality
+- Usability
+- Technical Requirements
 
 
 ## Functionality
 
 By clicking on a pokemon button a modal is being loaded with an image and additional information about the pokemon. The user can also filter the list to search for a pokemon. 
+Also, adding Bootstrap to the scripts on the html part caused some problem, but they could be fixed with a fitting thread on Stackoverflow. 
 
 ## Usability
 
